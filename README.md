@@ -1,8 +1,15 @@
-**PythonElasticsearch**
+# PythonElasticsearch
 
 Este repositório tem como objetivo a integração do python com o Elasticsearch ( Docker ).
 
-**Docker**
+Tecnologia trabalhada:
+
+> Docker,
+> Elasticsearch,
+> Kibana,
+> Flask
+
+## Docker
 
 Necessario a instalação do docker já que o projeto pode ser executado com o docker-compose, para isso siga os proximo passo:
 
@@ -12,7 +19,7 @@ cd PythonElasticsearch/Docker
 docker-compose up
 ```
 
-**Validação**
+## Elasticsearch
 
 Validando batendo diretamente na API do elasticsearch:
 
@@ -36,5 +43,27 @@ $ curl http://localhost:9200
   "tagline" : "You Know, for Search"
 }
 ```
+
+## Flask
+
+Usando o flask é preciso fazer a instalação da lib via pip no meu caso estou usando o python 3:
+
+```
+$ python3 -m pip install flask
+```
+
+Execução é bem tranquila, apenas apontando a app como a variavel que vai ser lida pelo flask e na sequencia a execução.
+
+```
+$ export ES_LOCAL="http://localhost:9200"
+$ export FLASK_APP=app
+$ export FLASK_ENV=development
+$ python3 -m flask run
+```
+
+Para verificar o funcionamento segue a url:
+
+> http://localhost:5000
+
 
 Continua....
