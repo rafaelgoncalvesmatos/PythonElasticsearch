@@ -7,7 +7,8 @@ Tecnologia trabalhada:
 > Docker,
 > Elasticsearch,
 > Kibana,
-> Flask
+> Flask,
+> Python
 
 ## Docker
 
