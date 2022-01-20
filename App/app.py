@@ -18,15 +18,30 @@ def rootpage():
     #     Para inserir dados \
     #     /[marca]/[panela] "
 
+@app.route("all")
+def all():
+    resultsearch = es.search(index="prev_indice", query={"match_all" : {} })
+    return resultsearch["hits"]
+
+@app.route("/search/<word>")
+def search_elastic(word):
+    resultsearch = es.search(index="loja", query={ "query_string" : { "query" : busca } })
+    return resultsearch["hits"]
+
 @app.route("/inserir/<marca>/<produto>")
 def inserir(marca, produto):
     doc = {
         "Marca" : marca,
         "Produto" : produto
+        "timestamp" : datetime.now()
     }
 
     try:
         result = es.index(index="loja", document=doc)
-        return result['result']
+        
+        if "created" in result['result']:
+            return result['result']
+        else:
+            return "Problem with insert data"
     except:
-        return "Erro ao inserir dados"
+        return "<h1>Problem with connection or create index"
