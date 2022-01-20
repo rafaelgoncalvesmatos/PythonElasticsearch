@@ -1,4 +1,4 @@
-![Elastic](https://drive.google.com/file/d/1TFOkrMMb7yl7UD4MpQLLv3uUYDp_SBZH/view?usp=sharing)
+![Elastic](https://drive.google.com/file/d/1TFOkrMMb7yl7UD4MpQLLv3uUYDp_SBZH/view)
 
 # PythonElasticsearch
 
