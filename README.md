@@ -1,3 +1,5 @@
+![Elastic](https://pin.it/3H84Iha)
+
 # PythonElasticsearch
 
 Este repositório tem como objetivo a integração do python com o Elasticsearch ( Docker ).
