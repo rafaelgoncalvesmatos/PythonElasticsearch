@@ -44,6 +44,13 @@ $ curl http://localhost:9200
 }
 ```
 
+Deletando indice diretamente com o curl:
+
+```
+curl -X DELETE localhost:9200/[indice]
+```
+
+
 ## Flask
 
 Usando o flask é preciso fazer a instalação da lib via pip no meu caso estou usando o python 3:
