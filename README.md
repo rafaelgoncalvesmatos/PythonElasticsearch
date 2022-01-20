@@ -44,12 +44,17 @@ $ curl http://localhost:9200
 }
 ```
 
+Consultando os indices atuais no Elastic:
+
+```
+$ curl -X GET http://localhost:9200/_cat/indices
+```
+
 Deletando indice diretamente com o curl:
 
 ```
-curl -X DELETE localhost:9200/[indice]
+$ curl -X DELETE http://localhost:9200/[indice]
 ```
-
 
 ## Flask
 
