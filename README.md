@@ -12,6 +12,49 @@ Tecnologia trabalhada:
 > Flask,
 > Python
 
+### Criando um ambiente Virtual com python
+
+Criação do diretorio:
+
+```
+$ mkdir flasky
+$ cd flasky
+```
+
+A criação de ambiente virtual é feita através da instalação do Python Env:
+
+```md
+$ sudo apt-get install python3-venv
+```
+
+O comando para criação do ambiente virtual:
+
+```md
+$ python3 -m venv nome do ambiente virtual
+```
+
+### Ativando o ambiente virtual
+
+Para a ativação do ambiente virtual segue o comando:
+
+```md
+$ source venv/bin/activate
+```
+
+Notasse quando o ambiente virtual é ativado as caracteristica do terminal muda:
+
+```md
+(venv) $
+```
+
+Observação, quando for utilizado o ambiente virtual todas as instalações e manipulação será feito no environment local e os terminais que tiverem utilizando tambem terá que ser feito a ativação. Ao inves de usar o interpretador do sistema, será usado o interpretador dentro do proprio environment.
+
+Quando terminar de trabalhar com o environment voce terá que digitar o comando:
+
+```md
+deactivateno
+```
+
 ## Docker
 
 Necessario a instalação do docker já que o projeto pode ser executado com o docker-compose, para isso siga os proximo passo:
