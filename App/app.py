@@ -11,23 +11,25 @@ app = Flask(__name__)
 @app.route("/")
 def rootpage():
     return "<b> Use da seguinte forma.</b><br> \
+        Para mostrar tudo <br>  \
+        /api/all <br><br> \
         Para buscar pela palavra chave <br>  \
-        /busca/[palavra] <br><br> \
+        /api/search/[palavra] <br><br> \
         Para inserir dados <br> \
-        /[marca]/[panela] <br>"
+        /api/insert/[marca]/[panela] <br>"
 
-@app.route("/all")
-def all():
+@app.route("/api/all")
+def all_elastic():
     resultsearch = es.search(index="loja", query={"match_all" : {} })
     return resultsearch["hits"]
 
-@app.route("/search/<word>")
+@app.route("/api/search/<word>")
 def search_elastic(word):
     resultsearch = es.search(index="loja", query={ "query_string" : { "query" : word } })
     return resultsearch["hits"]
 
-@app.route("/insert/<marca>/<produto>")
-def insert(marca, produto):
+@app.route("/api/insert/<marca>/<produto>")
+def insert_elastic(marca, produto):
     doc = {
         "Marca" : marca,
         "Produto" : produto,

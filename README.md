@@ -16,7 +16,7 @@ Tecnologia trabalhada:
 
 Criação do diretorio:
 
-```
+```md
 $ mkdir flasky
 $ cd flasky
 ```
@@ -59,7 +59,7 @@ deactivateno
 
 Necessario a instalação do docker já que o projeto pode ser executado com o docker-compose, para isso siga os proximo passo:
 
-```
+```md
 git clone [repositório]
 cd PythonElasticsearch/Docker
 docker-compose up
@@ -69,7 +69,7 @@ docker-compose up
 
 Validando batendo diretamente na API do elasticsearch:
 
-```
+```md
 $ curl http://localhost:9200
 {
   "name" : "es01",
@@ -92,13 +92,13 @@ $ curl http://localhost:9200
 
 Consultando os indices atuais no Elastic:
 
-```
+```md
 $ curl -X GET http://localhost:9200/_cat/indices
 ```
 
 Deletando indice diretamente com o curl:
 
-```
+```md
 $ curl -X DELETE http://localhost:9200/[indice]
 ```
 
@@ -106,22 +106,27 @@ $ curl -X DELETE http://localhost:9200/[indice]
 
 Usando o flask é preciso fazer a instalação da lib via pip no meu caso estou usando o python 3:
 
-```
+```md
 $ python3 -m pip install flask
 ```
 
 Execução é bem tranquila, apenas apontando a app como a variavel que vai ser lida pelo flask e na sequencia a execução.
 
-```
+```md
 $ export ES_LOCAL="http://localhost:9200"
 $ export FLASK_APP=app
 $ export FLASK_ENV=development
 $ python3 -m flask run
 ```
 
+Ou carregue a app para exposição da porta externamente.
+
+```md
+$ python3 -m flask run --host 0.0.0.0
+```
+
 Para verificar o funcionamento segue a url:
 
 > http://localhost:5000
-
 
 Continua....
